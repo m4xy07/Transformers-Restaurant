@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transformers Diner</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      header img {
+        height: 5rem;
+        width: auto;
+      }
+
+      header h1 {
+        margin: 0;
+        order: 2;
+        text-align: center;
+        width: 100%;
+      }
+
+      nav {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        order: 1;
+        width: 100%;
+      }
+
+      nav h2 {
+        color: #fff;
+        margin: 0 1rem 0 0;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      main section {
+        flex: 1 1 45%;
+        margin-bottom: 2rem;
+      }
+
+      main article {
+        background-color: #f2f2f2;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      main article img {
+        height: 15rem;
+        width: 30%;
+      }
+
+      main article h3 {
+        margin: 0;
+        width: 65%;
+      }
+
+      main article p {
+        font-style: italic;
+        margin: 0.5rem 0;
+        width: 65%;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      fieldset {
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        width: 100%;
+      }
+
+      legend {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 0;
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        margin: 0.5rem 0;
+        width: 100%;
+      }
+
+      input[type="number"] {
+        border: 1px solid #ddd;
+        display: block;
+        margin: 0.5rem 0;
+        padding: 0.25rem;
+        width: 100%;
+      }
+
+      textarea {
+        border: 1px solid #ddd;
+        display: block;
+        margin: 0.5rem 0;
+        padding: 0.25rem;
+        width: 100%;
+      }
+
+      input[type="submit"] {
+        background-color: #333;
+        border: none;
+        color: #fff;
+        display: block;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        padding: 0.5rem;
+        width: 100%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img id="header-img" src="https://i.imgur.com/g7Cpnf5.jpeg" alt="Transformers Diner logo">
+      <h1>Transformers Diner</h1>
+      <nav>
+        <h2 id="menu">Menu</h2>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Menu</h2>
+        <article>
+          <img src="https://i.imgur.com/m1ebKw1.jpeg" alt="Transformers Burger">
+          <h3>Transformers Burger</h3>
+          <p><em>A delicious burger with all the Transformers knowledge!</em> $9.99</p>
+        </article>
+        <article>
+          <img src="https://i.imgur.com/UdKDp8z.jpeg" alt="Megatron Shake">
+          <h3>Megatron Shake</h3>
+          <p><em>A delicious chocolate shake topped with whipped cream and a Megatron figurine!</em> $4.99</p>
+        </article>
+        <article>
+          <img src="https://i.imgur.com/8MqQWea.png" alt="Bumblebee Fries">
+          <h3>Bumblebee Fries</h3>
+          <p><em>Crispy fries seasoned with Bumblebee's secret spices ;) !</em> $3.99</p>
+        </article>
+      </section>
+      <section>
+        <h2>Place Your Order</h2>
+        <form>
+          <fieldset>
+            <legend>Transformers Burger</legend>
+            <label for="transformers-burger-quantity">Quantity:</label>
+            <input type="number" id="transformers-burger-quantity" name="transformers-burger-quantity" min="0">
+            <br/>
+            <br/>
+            <legend>Megatron Shake</legend>
+            <label for="megatron-shake-quantity">Quantity:</label>
+            <input type="number" id="megatron-shake-quantity" name="megatron-shake-quantity" min="0">
+            <br/>
+            <br/>
+            <legend>Bumblebee Fries</legend>
+            <label for="bumblebee-fries-quantity">Quantity:</label>
+            <input type="number" id="bumblebee-fries-quantity" name="bumblebee-fries-quantity" min="0">
+            <br/>
+            <br/>
+            <legend>Special Requests</legend>
+            <label for="special-requests">Special Requests:</label>
+            <textarea id="special-requests" name="special-requests"></textarea>
+            <br/>
+            <br/>
+            <input type="submit" value="Go To Checkout">
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>m4xy07 - Aman S</p>
+    </footer>
+  </body>
+</html>
