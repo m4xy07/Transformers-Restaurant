@@ -7,3 +7,6 @@ The menu includes an amazing **Transformers Burger** that you can pair with the 
 
 
 It is solely built using HTML & CSS
+
+# View it live
+You can view the website live @ https://projects.m4xy.org/diner
