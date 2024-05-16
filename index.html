@@ -1,24 +1,36 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <title>Transformers Diner</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #ecf0f1;
-            --accent-color: #3498db;
-            --light-grey: #bdc3c7;
-            --dark-grey: #34495e;
+            --primary-color: #1a1a1d;
+            --secondary-color: #333333;
+            --accent-color: #007BFF;
+            --light-grey: #6c757d;
+            --dark-grey: #ccc;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.25s ease;
         }
 
         body {
             font-family: var(--font-family);
             margin: 0;
             padding: 0;
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: var(--dark-grey);
+            overflow-x: hidden;
         }
 
         .container {
@@ -28,25 +40,34 @@
         }
 
         header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
+            background-color: var(--secondary-color);
+            color: var(--dark-grey);
             padding: 20px 0;
             text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+        text-align: center;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         nav {
-            background-color: var(--dark-grey);
+            background-color: var(--primary-color);
             padding: 10px 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
-            color: var(--secondary-color);
+            color: var(--dark-grey);
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.1rem;
@@ -62,12 +83,25 @@
             background-size: cover;
             padding: 100px 0;
             text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
         }
 
         .hero h2 {
-            color: var(--secondary-color);
+            color: var(--dark-grey);
             font-size: 3rem;
             margin: 0;
+            position: relative;
+            z-index: 1;
         }
 
         .menu {
@@ -87,7 +121,8 @@
         }
 
         .menu-item:hover {
-            transform: translateY(-5px);
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
 
         .menu-item img {
@@ -101,7 +136,7 @@
             padding: 15px;
             margin: 0;
             background-color: var(--primary-color);
-            color: var(--secondary-color);
+            color: whitesmoke;
         }
 
         .menu-item p {
@@ -109,6 +144,7 @@
             margin: 0;
             text-align: center;
             font-style: italic;
+            color: whitesmoke;
         }
 
         .order-form {
@@ -173,36 +209,46 @@
             }
         }
     </style>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Transformers Diner</h1>
-        </div>
-    </header>
+    <div class="container">
+        <h1 class="animate__animated animate__bounce">Transformers Diner</h1>
+    </div>
     <nav>
         <div class="container">
-            <a href="#menu">Menu</a>
-            <a href="#order">Order</a>
-            <a href="#contact">Contact</a>
+            <a href="#menu" class="animate__animated animate__bounce">Menu</a>
+            <a href="#order" class="animate__animated animate__bounce">Order</a>
+            <a href="#contact" class="animate__animated animate__bounce">Contact</a>
         </div>
     </nav>
     <div class="hero">
-        <h2>Welcome to the Transformers Diner</h2>
+        <h2 class="animate__animated animate__zoomIn">Welcome to the Transformers Diner</h2>
     </div>
     <main class="container">
         <section class="menu" id="menu">
-            <div class="menu-item">
+            <div class="menu-item animate__animated animate__flipInX">
                 <img src="https://i.imgur.com/m1ebKw1.jpeg" alt="Transformers Burger">
                 <h3>Transformers Burger</h3>
                 <p>A delicious burger with all the Transformers knowledge! $9.99</p>
             </div>
-            <div class="menu-item">
+            <div class="menu-item animate__animated animate__flipInX">
                 <img src="https://i.imgur.com/UdKDp8z.jpeg" alt="Megatron Shake">
                 <h3>Megatron Shake</h3>
                 <p>A delicious chocolate shake topped with whipped cream and a Megatron figurine! $4.99</p>
             </div>
-            <div class="menu-item">
+            <div class="menu-item animate__animated animate__flipInX">
                 <img src="https://i.imgur.com/8MqQWea.png" alt="Bumblebee Fries">
                 <h3>Bumblebee Fries</h3>
                 <p>Crispy fries seasoned with Bumblebee's secret spices ;) $3.99</p>
